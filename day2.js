@@ -180,10 +180,10 @@ function addSpaceAndCaps(arr) {
 
 function decoder(str) {
   let newArr = createArr(str);
-  newArr = addSpaceAndCaps(newArr);
+  let codeArr = addSpaceAndCaps(newArr);
   const decoded = (accumulator, currentValue) => accumulator + currentValue;
-  newArr = newArr.reduce(decoded, '');
-  return newArr;
+  codeArr = codeArr.reduce(decoded, '');
+  return codeArr;
 }
 
 // tests
