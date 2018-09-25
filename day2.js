@@ -1,4 +1,4 @@
-('use strict');
+'use strict';
 
 // Redo the "max and min (without sort or Math.max/min)" drill but this time use 
 // a while loop instead of a for loop
@@ -64,7 +64,7 @@ repeat(goodbye, 5);
 function filter(arr, fn) {
   const newArray = [];
   for (let i = 0; i < arr.length; i++) {
-    if (fn(arr[i]) === true) {
+    if (fn(arr[i])) {
       newArray.push(arr[i]);
     }
   }
@@ -92,10 +92,14 @@ console.log(filteredNames); // => ['Rich', 'Ray']
 // Functions as return values
 function hazardWarningCreator(typeOfWarning) {
   let warningCounter = 0;
+  let singularOrPlural = 'time';
   return function(location) {
     warningCounter++;
+    if (warningCounter > 1) {
+      singularOrPlural = 'times';
+    }
     console.log(`DANGER! There is a ${typeOfWarning} hazard at ${location}!`);
-    console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} time(s) today!`);
+    console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} ${singularOrPlural} today!`);
   };
 }
 
