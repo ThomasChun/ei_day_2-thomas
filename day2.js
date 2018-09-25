@@ -129,7 +129,7 @@ function totalTurtleSteps(arr) {
   return arr
     .filter(move => move[0] >= 0 && move[1] >= 0)
     .map(move => move[0] + move[1])
-    .forEach(move => console.log(move));
+    .forEach(move => console.log(`The turtle took ${move} steps on this move.`));
 }
 
 totalTurtleSteps(arrayOfMoves);
@@ -138,24 +138,24 @@ totalTurtleSteps(arrayOfMoves);
 
 
 // reduce
-let testStr = 'noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest';
-let newArr = testStr.split(' ');
+// let testStr = 'noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest';
+// let newArr = testStr.split(' ');
 
-function addSpaceAndCaps(arr) {
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i].length === 3) {
-      arr[i] = ' ';
-    } else {
-      arr[i] = arr[i].slice(-1).toUpperCase();
-    }
-  }
-  return arr;
-}
+// function addSpaceAndCaps(arr) {
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i].length === 3) {
+//       arr[i] = ' ';
+//     } else {
+//       arr[i] = arr[i].slice(-1).toUpperCase();
+//     }
+//   }
+//   return arr;
+// }
 
-let lastChar = addSpaceAndCaps(newArr);
-const decoded = (accumulator, currentValue) => accumulator + currentValue;
+// let lastChar = addSpaceAndCaps(newArr);
+// const decoded = (accumulator, currentValue) => accumulator + currentValue;
 
-console.log(lastChar.reduce(decoded, ''));
+// console.log(lastChar.reduce(decoded, ''));
 
 
 
