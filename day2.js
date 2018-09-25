@@ -83,7 +83,7 @@ const filteredNames = filter(myNames, function(name) {
   return name[0] === 'R';
 });
 
-console.log(filteredNames) // => ['Rich', 'Ray']
+console.log(filteredNames); // => ['Rich', 'Ray']
 // <---- DO NOT EDIT BETWEEN THESE LINES
 
 
@@ -96,7 +96,7 @@ function hazardWarningCreator(typeOfWarning) {
     warningCounter++;
     console.log(`DANGER! There is a ${typeOfWarning} hazard at ${location}!`);
     console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} time(s) today!`);
-  }
+  };
 }
 
 const rocksWarning = hazardWarningCreator('Rocks on the Road');
@@ -138,3 +138,20 @@ totalTurtleSteps(arrayOfMoves);
 
 
 // reduce
+let testStr = 'noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest';
+let newArr = testStr.split(' ');
+
+for (let i = 0; i < newArr.length; i++) {
+  if (newArr[i].length === 3) {
+    newArr[i] += ' ';
+  }
+}
+
+let capLastCharArr = newArr.map(function(word) {
+  return word.slice(0, -1) + word.slice(-1).toUpperCase();
+});
+
+const lastChar = (initialValue, lastCharCap) => initialValue + lastCharCap[lastCharCap.length -1];
+
+// test
+console.log(capLastCharArr.reduce(lastChar, ''));
