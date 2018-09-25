@@ -138,7 +138,6 @@ totalTurtleSteps(arrayOfMoves);
 
 
 // reduce
-
 let testStr = 'noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest';
 let newArr = testStr.split(' ');
 
@@ -157,3 +156,37 @@ let lastChar = addSpaceAndCaps(newArr);
 const decoded = (accumulator, currentValue) => accumulator + currentValue;
 
 console.log(lastChar.reduce(decoded, ''));
+
+
+
+
+// alt second solution to reduce
+let testStr = 'noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest';
+
+function createArr(str) {
+  return str.split(' ');
+}
+
+function addSpaceAndCaps(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].length === 3) {
+      arr[i] = ' ';
+    } else {
+      arr[i] = arr[i].slice(-1).toUpperCase();
+    }
+  }
+  return arr;
+}
+
+function decoder(str) {
+  let newArr = createArr(str);
+  newArr = addSpaceAndCaps(newArr);
+  const decoded = (accumulator, currentValue) => accumulator + currentValue;
+  newArr = newArr.reduce(decoded, '');
+  return newArr;
+}
+
+// tests
+console.log(decoder(testStr));
+console.log(decoder('looking oreo oero good'));
+console.log(decoder('math create really'));
