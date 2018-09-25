@@ -34,8 +34,26 @@ function min(numbers) {
 
 function average(numbers) {
   let arraySum = 0;
-  numbers.forEach(element => {
-    arraySum += element;
-  });
+  numbers.forEach(element => arraySum += element);
   return arraySum / numbers.length;
 }
+
+// Higher Order Function Drills
+
+// Functions as arguments (1)
+
+function repeat(fn, n) {
+  for (let i = 0; i < n; i++) {
+    fn();
+  }
+}
+
+let hello = () => console.log('Hello world');
+let goodbye = () => console.log('Goodbye world');
+
+// tests
+repeat(hello, 3);
+repeat(goodbye, 5);
+
+// Functions as arguments (2)
+
