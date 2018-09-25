@@ -28,6 +28,7 @@ function min(numbers) {
 
 
 
+
 // Redo "Compute the average" exercise but use the Array.forEach() method instead 
 // of a for loop
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
@@ -36,6 +37,7 @@ function average(numbers) {
   numbers.forEach(element => arraySum += element);
   return arraySum / numbers.length;
 }
+
 
 
 
@@ -54,6 +56,7 @@ let goodbye = () => console.log('Goodbye world');
 // tests
 repeat(hello, 3);
 repeat(goodbye, 5);
+
 
 
 
@@ -85,6 +88,7 @@ console.log(filteredNames) // => ['Rich', 'Ray']
 
 
 
+
 // Functions as return values
 function hazardWarningCreator(typeOfWarning) {
   let warningCounter = 0;
@@ -111,4 +115,26 @@ roadClosure('Main St and Pacific Ave');
 
 
 
+
 // forEach, filter and map
+const arrayOfMoves = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
+
+// ** Initial Solution **
+// const forwardLeft = arrayOfMoves.filter(move => move[0] >= 0 && move[1] >= 0);
+// const stepsPerMove = forwardLeft.map(move => move[0] + move[1]);
+// const totalSteps = stepsPerMove.forEach(move => console.log(move));
+
+// ** Refactored Solution **
+function totalTurtleSteps(arr) {
+  return arr
+    .filter(move => move[0] >= 0 && move[1] >= 0)
+    .map(move => move[0] + move[1])
+    .forEach(move => console.log(move));
+}
+
+totalTurtleSteps(arrayOfMoves);
+
+
+
+
+// reduce
