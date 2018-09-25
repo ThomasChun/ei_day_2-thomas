@@ -32,3 +32,10 @@ function min(numbers) {
 // of a for loop
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
 
+function average(numbers) {
+  let arraySum = 0;
+  numbers.forEach(element => {
+    arraySum += element;
+  });
+  return arraySum / numbers.length;
+}
