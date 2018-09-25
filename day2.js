@@ -82,3 +82,33 @@ const filteredNames = filter(myNames, function(name) {
 
 console.log(filteredNames) // => ['Rich', 'Ray']
 // <---- DO NOT EDIT BETWEEN THESE LINES
+
+
+
+// Functions as return values
+function hazardWarningCreator(typeOfWarning) {
+  let warningCounter = 0;
+  return function(location) {
+    warningCounter++;
+    console.log(`DANGER! There is a ${typeOfWarning} hazard at ${location}!`);
+    console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} time(s) today!`);
+  }
+}
+
+const rocksWarning = hazardWarningCreator('Rocks on the Road');
+const waterMainBreak = hazardWarningCreator('Water main break');
+const roadClosure = hazardWarningCreator('Road closures, use alternate routes');
+
+// tests
+rocksWarning('Main St and Pacific Ave');
+rocksWarning('Centinela Ave and Olympic Blvd');
+waterMainBreak('Main St and Pacific Ave');
+waterMainBreak('Centinela Ave and Olympic Blvd');
+rocksWarning('6th St and Wilshire Blvd');
+roadClosure('Wilshire Blvd and Vermont Ave');
+rocksWarning('Wilshire Blvd and Vermont Ave');
+roadClosure('Main St and Pacific Ave');
+
+
+
+// forEach, filter and map
